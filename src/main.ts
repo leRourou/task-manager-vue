@@ -1,18 +1,6 @@
-import { createApp } from "vue";
+import { createApp, watch } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import vuetify from "./plugins/vuetify";
 
-createApp(App).use(router).mount("#app");
-
-// router.ts
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "./views/HomeView.vue";
-
-const routes = [
-    { path: "/", component: HomeView },
-];
-
-export default createRouter({
-    history: createWebHistory(),
-    routes,
-});
+createApp(App).use(router).use(vuetify).mount("#app");
